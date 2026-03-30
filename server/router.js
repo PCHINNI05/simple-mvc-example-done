@@ -16,6 +16,10 @@ const router = (app) => {
   app.get('/page1', controllers.page1);
   app.get('/page2', controllers.page2);
   app.get('/page3', controllers.page3);
+
+  // route for page4 to display all dogs
+  app.get('/page4', controllers.page4);
+
   app.get('/getName', controllers.getName);
   app.get('/findByName', controllers.searchName);
 
@@ -32,6 +36,13 @@ const router = (app) => {
 
   // When someone POSTS to /updateLast, call controllers.updateLast
   app.post('/updateLast', controllers.updateLast);
+
+  // --- DOG ADDITIONS ---
+  // When someone POSTS to create a dog
+  app.post('/makeDog', controllers.makeDog);
+
+  // When someone POSTS to increase a dog's age
+  app.post('/increaseDogAge', controllers.increaseDogAge);
 };
 
 // export the router function
